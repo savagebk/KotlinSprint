@@ -22,6 +22,4 @@ fun main() {
     println("Общие расходы по ЗП после прихода стажеров: $formattedOverallSalary р.")
     println("Cредняя ЗП одного сотрудника после устройства стажеров: $formattedAvgSalary р.")
 
-
-
 }
