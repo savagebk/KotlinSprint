@@ -6,9 +6,9 @@ fun main() {
     val helloEvening = "Добрый вечер"                                   //текст вечернего приветствия
     var userName = "Алексей"                                            //имя пользователя
 
-    var helloText = "$helloDay, $userName!"                             //формирование полной строки приветствия, выводимого днем
+    var helloText = "$helloDay, $userName!"
     println(helloText)
 
-    helloText = "$helloEvening, $userName!"                             //формирование полной строки приветствия, выводимого вечером
+    helloText = "$helloEvening, $userName!"
     println(helloText)
 }
