@@ -5,17 +5,43 @@ import java.math.RoundingMode
 
 fun main() {
 
-    val startAmount = BigDecimal(70000)                                                                                     //сумма вклада, рублей
-    val interestRate = BigDecimal(16.7)                                                                                     //процентная ставка, %
-    val depositeTerm = 20                                                                                                        //срок вклада
-    val amountRoundDigits = 3                                                                                                    //количество знаков после запятой в сумме на счете
-    val interestRate_100 = interestRate.divide(BigDecimal(100))                                                    //перевод процентной ставки в коэффициент
+    val startAmount = BigDecimal(70000)
+    val interestRate = BigDecimal(16.7)
+    val depositeTerm = 20
+    val amountRoundDigits = 3
 
-    var base = interestRate_100.add(BigDecimal(1))                                                                          //основание степени формулы сложных процентов с ежегодной капитализацией
-    var raised = base.pow(depositeTerm)                                                                                      //возведение в степень
-    var endAmount = startAmount.multiply(raised, )                                                                   //вычисление суммы на счету в конце срока вклада
+    val interestRate_100 = interestRate.divide(BigDecimal(100))
 
-    var shownEndAmount = endAmount.setScale(amountRoundDigits, RoundingMode.HALF_UP)                                   //округление отображаемой суммы на счету в конце срока вклада
+    // вычисление суммы на счету с учетом сложных процентов с ежегодной капитализацией
+    var base = interestRate_100.add(BigDecimal(1))
+    var raised = base.pow(depositeTerm)
+    var endAmount = startAmount.multiply(raised, )
+
+    var shownEndAmount = endAmount.setScale(amountRoundDigits, RoundingMode.HALF_UP)
 
     println("Размер вклада через $depositeTerm лет: $shownEndAmount р.")
 }
+/*import kotlin.math.pow
+import kotlin.math.round
+
+
+fun main(){
+
+    val startAmount = 70000
+    val interestRate = 16.7f
+    val depositeTerm = 20
+    val amountRoundDigits = 3
+
+    val interestRate_100 = round((interestRate / 100)*1000)/1000
+
+    println(interestRate_100)
+
+    // вычисление суммы на счету с учетом сложных процентов с ежегодной капитализацией
+    var base = interestRate_100+1
+    var raised = base.pow(depositeTerm) ; println(raised)
+    var endAmount = startAmount * raised
+
+    var shownEndAmount = round(endAmount*1000)/1000
+
+    println("Размер вклада через $depositeTerm лет: $shownEndAmount р.")
+}*/
