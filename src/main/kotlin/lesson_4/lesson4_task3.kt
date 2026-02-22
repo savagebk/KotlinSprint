@@ -7,11 +7,14 @@ const val NO_NEED_TIME_OF_YEAR = "зима"
 
 fun main() {
 
-    var sunnyWeather : Boolean = true
-    var openAwning : Boolean = true
+    var isSunny : Boolean = true
+    var isAwningOpen : Boolean = true
     var humidity = 20
     var timeOfYear = "зима"
 
-    println("Благоприятные ли условия сейчас для роста бобовых? ${(sunnyWeather && NEED_SUNNY_WEATHER) && (openAwning && NEED_OPEN_AWNING) && (humidity == NEED_HUMIDITY) && (timeOfYear != NO_NEED_TIME_OF_YEAR)}")
+    println("Благоприятные ли условия сейчас для роста бобовых? ${(isSunny && NEED_SUNNY_WEATHER) &&
+            (isAwningOpen && NEED_OPEN_AWNING) &&
+            (humidity == NEED_HUMIDITY) &&
+            (timeOfYear != NO_NEED_TIME_OF_YEAR)}")
 
 }
