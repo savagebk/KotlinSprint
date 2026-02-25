@@ -12,11 +12,9 @@ fun main() {
     println ("Введите параметры полета")
     println()
     print ("Наличие повреждений корабля y/n: ")
-    val shipDamagedString = readln()
+    val shipDamagedString = readln().lowercase()
     if (shipDamagedString == "n" ||
-        shipDamagedString == "N" ||
-        shipDamagedString == "н" ||
-        shipDamagedString == "Н") {
+        shipDamagedString == "н") {
         shipDamaged = false
     }
 
