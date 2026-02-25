@@ -27,11 +27,8 @@ fun main() {
     val provisions = readln().toInt()
 
     print("Погодные условия благоприятны: ")
-    val weatherString = readln()
-    if (weatherString == "y" ||
-        weatherString == "Y" ||
-        weatherString == "д" ||
-        weatherString == "Д") {
+    val weatherString = readln().lowercase()
+    if (weatherString == "y" || weatherString == "д") {
         weatherIsGood = true
     }
 
