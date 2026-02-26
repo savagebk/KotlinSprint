@@ -14,7 +14,7 @@ fun main() {
         number2 = Random.nextInt(0, 42).toString()
     }
 
-    val numbers = listOf(number1, number2, number3) ; println(numbers)
+    val numbers = listOf(number1, number2, number3)
 
     println("Введите числа по одному в каждой строке:")
     val input1 = readln()
