@@ -19,9 +19,9 @@ fun main() {
     print("Индекс массы тела равен ${(bmi*100).roundToInt()/100.0} - ")
 
     when {
-        bmi < MIN_BMI -> println ("недостаточная маса тела.")
-        bmi >= MIN_BMI && bmi < NORMAL_BMI -> println ("нормальная маса тела.")
-        bmi >= NORMAL_BMI && bmi < MAX_BMI -> println ("нзбыточная маса тела.")
+        bmi < MIN_BMI -> println ("недостаточная масса тела.")
+        bmi >= MIN_BMI && bmi < NORMAL_BMI -> println ("нормальная масса тела.")
+        bmi >= NORMAL_BMI && bmi < MAX_BMI -> println ("избыточная масса тела.")
     else -> println("ожирение.")
         }
 }
