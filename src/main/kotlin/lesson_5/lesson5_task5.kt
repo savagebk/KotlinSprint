@@ -21,7 +21,7 @@ fun main() {
     val input2 = readln()
     val input3 = readln()
 
-    val inputs = listOf(input1, input2 , input3)
+    val inputs = listOf(input1, input2, input3)
 
     val guessed = (inputs intersect numbers).size
 
