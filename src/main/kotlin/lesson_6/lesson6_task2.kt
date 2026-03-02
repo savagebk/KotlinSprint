@@ -9,4 +9,5 @@ fun main() {
     val milliseconds = MILLIS * secs
     Thread.sleep(milliseconds)
     println("Прошло $secs секунд")
+
 }
