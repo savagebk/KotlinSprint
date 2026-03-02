@@ -5,8 +5,8 @@ const val MILLIS = 1000                 // мс в секунде
 fun main() {
 
     println("Сколько секунд засечь?")
-    val milliseconds = MILLIS*readln().toLong()
-
+    val secs = readln().toLong()
+    val milliseconds = MILLIS * secs
     Thread.sleep(milliseconds)
-
+    println("Прошло $secs секунд")
 }
