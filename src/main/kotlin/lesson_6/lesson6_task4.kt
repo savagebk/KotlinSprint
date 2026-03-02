@@ -1,12 +1,10 @@
 package org.example.lesson_6
 
-import kotlin.random.Random
-
 const val MAX_TRIES = 5
 
 fun main() {
 
-    val number = Random.nextInt(1, 9)
+    val number = (1..9).random()
     println("Угадай число от 1 до 9 за 5 попыток")
     var triesLeft = MAX_TRIES
 
@@ -14,7 +12,7 @@ fun main() {
         print("Введи число: ")
         if (readln().toInt() == number) {
             println("Это была великолепная игра!")
-            break
+            return
         } else {
             if (triesLeft == 0) println("Было загадано число $number")
             else println("Неверно. Осталось попыток: ${triesLeft}")
