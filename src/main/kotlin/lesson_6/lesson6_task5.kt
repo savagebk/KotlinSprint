@@ -6,8 +6,8 @@ const val MAX_TRIES = 3
 
 fun main() {
 
-    var number1 : Int
-    var number2 : Int
+    var number1:Int
+    var number2:Int
     var triesLeft = MAX_TRIES
 
     println("Здравствуйте!")
