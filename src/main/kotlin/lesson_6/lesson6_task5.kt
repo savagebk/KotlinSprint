@@ -2,13 +2,13 @@ package org.example.lesson_6
 
 import kotlin.random.Random
 
-const val MAX_TRIES = 3
+const val MAX_TRIES_OF_LOGIN = 3
 
 fun main() {
 
     var number1: Int
     var number2: Int
-    var triesLeft = MAX_TRIES
+    var triesLeft = MAX_TRIES_OF_LOGIN
 
     println("Здравствуйте!")
     println("Для подтверждения того, что вы человек, введите результат выражения:")
