@@ -1,10 +1,15 @@
 package org.example.lesson_7
 
-const val LENGHT = 6
+const val PASSWORD_LENGHT = 6
 
 fun main() {
 
-    val digits = (0..9).toString()
-    println(digits.length)
+    val symbols = (0..9).toList() + ('a'..'z').toList()
+    var password = ""
 
+    for (i in 1 .. PASSWORD_LENGHT) {
+        password = password + symbols.random()
+    }
+
+    println(password)
 }
