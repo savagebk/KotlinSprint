@@ -4,7 +4,7 @@ fun main() {
 
     val ingredients = arrayOf("пельмени", "вода", "соль")
     print("Какой ингредиент найти: ")
-    val askedIngredient = readln()
+    val askedIngredient = readln().lowercase()
     for (i in ingredients.indices) {
         if (ingredients[i] == askedIngredient) {
             println("Ингредиент \"$askedIngredient\" в рецепте есть")
