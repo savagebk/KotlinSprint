@@ -49,5 +49,5 @@ fun main() {
         }
     }
 
-    println("Ваш пароль: " + password)
+    println("Ваш пароль: " + password.joinToString(""))
 }
