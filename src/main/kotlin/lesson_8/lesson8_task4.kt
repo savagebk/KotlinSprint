@@ -7,9 +7,10 @@ fun main() {
 
     println("Какой ингредиент заменить: ")
     val changeIngr = readln().lowercase()
-    if (ingredients.contains(changeIngr)) {
+    val changeIndex = ingredients.indexOf(changeIngr)
+    if (changeIndex != -1) {
         print("Заменить на: ")
-        ingredients[ingredients.indexOf(changeIngr)] = readln().lowercase()
+        ingredients[changeIndex] = readln().lowercase()
         println("Готово! Вы сохранили следующий список: ${ingredients.contentToString().drop(1).dropLast(1)}")
     } else {
         println("Данного ингредиента нет в списке")
