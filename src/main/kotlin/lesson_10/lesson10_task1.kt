@@ -17,13 +17,13 @@ fun main() {
     }
 }
 
-fun turn(name: String?): Int {
+fun turn(name: String): Int {
     val result = diceRoll(DICE_SIDES)
     println("Ходит $name. $name выбрасывает $result")
     return result
 }
 
-fun diceRoll(diceSides: Int?): Int {
-    val roll = (1..(diceSides ?: 2)).random()
+fun diceRoll(diceSides: Int): Int {
+    val roll = (1 .. diceSides).random()
     return roll
 }
