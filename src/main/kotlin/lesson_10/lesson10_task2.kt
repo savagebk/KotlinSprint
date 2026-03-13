@@ -17,9 +17,5 @@ fun main() {
 }
 
 fun lengthCheck(input: String): Boolean {
-    if (input.length >= MIN_LENGTH) {
-        return true
-    } else {
-        return false
-    }
+    return input.length >= MIN_LENGTH
 }
