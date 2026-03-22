@@ -20,12 +20,11 @@ fun main() {
 
 fun authorization(username: String, password: String): String? {
     if (username == CRED_USERNAME && password == CRED_PASSWORD) {
-        val symbols = (('0'..'9') + ('A'..'Z') + ('a'..'z')).toString()
-        val token = mutableListOf<Char>()
+        val symbols = (('0'..'9') + ('A'..'Z') + ('a'..'z'))
+        val token = MutableList<Char>(TOKEN_SIZE) {'0'}
         for (i in 0 until TOKEN_SIZE) {
-            token[i] = symbols.random()
+            token[i] = symbols[(0.. symbols.lastIndex).random()]
         }
-        println(token)
         return token.joinToString("")
     } else return null
 }
