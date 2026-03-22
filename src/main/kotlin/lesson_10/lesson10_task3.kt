@@ -7,10 +7,10 @@ fun main() {
 
     print("Введите длину пароля: ")
     val passwordLength = readln().toInt()
-    println("Ваш пароль: " + generator(passwordLength))
+    println("Ваш пароль: " + generate(passwordLength))
 }
 
-fun generator(length: Int): String {
+fun generate(length: Int): String {
     val password = MutableList(length) { ' ' }
     for (i in password.indices) {
         if (i % 2 == 0) {
