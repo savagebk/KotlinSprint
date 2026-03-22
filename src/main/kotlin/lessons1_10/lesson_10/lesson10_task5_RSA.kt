@@ -7,8 +7,8 @@ import java.security.interfaces.RSAPrivateKey
 import java.security.interfaces.RSAPublicKey
 import java.util.*
 
-const val USERNAME = "qwerty"
-const val PASSWORD = "123456"
+const val CRED_USERNAME_RSA = "qwerty"
+const val CRED_PASSWORD_RSA = "123456"
 const val TOKEN_LIFETERM = 90000                       //мс
 
 fun main() {
@@ -33,7 +33,7 @@ fun main() {
 }
 
 fun authorization(username: String, password: String, privateKey: RSAPrivateKey, publicKey: RSAPublicKey): String? {
-    if (username == CRED_USERNAME && password == CRED_PASSWORD) {
+    if (username == CRED_USERNAME_RSA && password == CRED_PASSWORD_RSA) {
         val algorithm = Algorithm.RSA256(publicKey, privateKey)
         return JWT.create()
             .withSubject(username)
