@@ -1,6 +1,6 @@
 package org.example.lesson_11
 
-class User (
+class User(
     val id: Int,
     val userName: String,
     val password: String,
