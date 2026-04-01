@@ -10,7 +10,7 @@ fun main() {
     val usernameInput = readln()
     print("Введите пароль: ")
     val passwordInput = readln()
-    val token = authorization(usernameInput, passwordInput)
+    val token = authorizeAndGenerateToken(usernameInput, passwordInput)
     if (token != null) {
         println("В корзине: " + basket(token).joinToString(", "))
     } else {
@@ -18,7 +18,7 @@ fun main() {
     }
 }
 
-fun authorization(username: String, password: String): String? {
+fun authorizeAndGenerateToken(username: String, password: String): String? {
     if (username == CRED_USERNAME && password == CRED_PASSWORD) {
         val symbols = (('0'..'9') + ('A'..'Z') + ('a'..'z'))
         val token = MutableList<Char>(TOKEN_SIZE) {'0'}
