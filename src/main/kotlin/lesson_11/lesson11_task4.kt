@@ -1,27 +1,24 @@
 package lesson_11
 
-import java.util.Date
-
-class ReceiptCategory(
+class RecipeCategory(
     val id: Int,
     val name: String,
     val description: String,
     val imageUrl: String,
-    val receipts: MutableList<Receipt>,
+    val recipes: List<Recipe>,
 )
 
-class Receipt(
+class Recipe(
     val id: Int,
     val name: String,
     val imageUrl: String,
-    val portions: Int,
-    val ingredients: MutableMap<Ingredient, Int>,
-    val cookingMethod: MutableMap<Int, String>,
+    val ingredients: List<Ingredient>,
+    val cookingMethod: List<String>,
     val inFavorites: Boolean,
 )
 
 class Ingredient(
-    val id: Int,
-    val name: String,
-    val measureUnit: String,
+    val quantity: Int,
+    val unitOfMeasure: String,
+    val description: String,
 )
