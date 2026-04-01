@@ -11,12 +11,12 @@ class User2(
         println("$id\n$userName\n$password\n$email\n$bio")
     }
 
-    fun bioEdit() {
+    fun editBio() {
         print("Введите краткую информацию о себе: ")
         bio = readln()
     }
 
-    fun passwordChange() {
+    fun changePassword() {
         print("Введите старый пароль: ")
         val passwordInput = readln()
         if (passwordInput == password) {
@@ -42,10 +42,10 @@ fun main() {
         email = "root@system.com",
     )
 
-    user0.bioEdit()
+    user0.editBio()
 
     println("\nИзменение пароля:")
-    user0.passwordChange()
+    user0.changePassword()
 
     println("\nИнформация о пользователе:")
     user0.printInfo()
