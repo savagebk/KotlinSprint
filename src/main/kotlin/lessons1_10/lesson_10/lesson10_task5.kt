@@ -12,7 +12,7 @@ fun main() {
     val passwordInput = readln()
     val token = authorizeAndGenerateToken(usernameInput, passwordInput)
     if (token != null) {
-        println("В корзине: " + basket(token).joinToString(", "))
+        println("В корзине: " + getBasket(token).joinToString(", "))
     } else {
         println("Неудачная авторизация")
     }
@@ -21,16 +21,16 @@ fun main() {
 fun authorizeAndGenerateToken(username: String, password: String): String? {
     if (username == CRED_USERNAME && password == CRED_PASSWORD) {
         val symbols = (('0'..'9') + ('A'..'Z') + ('a'..'z'))
-        val token = MutableList<Char>(TOKEN_SIZE) {'0'}
+        val token = MutableList(TOKEN_SIZE) { '0' }
         for (i in 0 until TOKEN_SIZE) {
-            token[i] = symbols[(0.. symbols.lastIndex).random()]
+            token[i] = symbols[symbols.indices.random()]
         }
         return token.joinToString("")
     } else return null
 }
 
-fun basket(token: String): MutableList<String> {
-    val basket = mutableListOf("Грецкие орехи", "Копченая колбаса", "Ежедневник")
+fun getBasket(token: String): List<String> {
+    val basket = listOf("Грецкие орехи", "Копченая колбаса", "Ежедневник")
     val tokenReceiver = token
     return basket
 }

@@ -26,7 +26,7 @@ fun main() {
     val passwordInput = readln()
     val token = authorization(usernameInput, passwordInput, priv, publ)
     if (token != null) {
-        println ("В корзине: " + basket(token).joinToString(", "))
+        println ("В корзине: " + getBasket(token).joinToString(", "))
     } else {
         println ("Неудачная авторизация")
     }
@@ -43,7 +43,7 @@ fun authorization(username: String, password: String, privateKey: RSAPrivateKey,
     } else return null
 }
 
-fun basket (token: String?): MutableList<String> {
+fun getBasket (token: String?): MutableList<String> {
     val basket = mutableListOf ("Грецкие орехи", "Копченая колбаса", "Ежедневник")
     if (token != null) {
         return basket
