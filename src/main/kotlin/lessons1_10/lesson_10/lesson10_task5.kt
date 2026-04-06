@@ -5,7 +5,6 @@ const val CRED_PASSWORD = "123456"
 const val TOKEN_SIZE = 32
 
 fun main() {
-
     print("Введите имя пользователя: ")
     val usernameInput = readln()
     print("Введите пароль: ")
