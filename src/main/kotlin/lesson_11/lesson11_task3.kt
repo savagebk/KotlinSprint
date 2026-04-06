@@ -1,21 +1,23 @@
 package lesson_11
 
-import kotlin.Int
-
 class Room(
     val id: Int,
     val roomName: String,
     val cover: String,      //путь к файлу обложки
     val users: MutableList<Person> = mutableListOf(),
-    val statusList: List<String> = listOf<String>("Микрофон выключен", "Разговаривает", "Пользователь заглушен")
+    val statusList: List<String> = listOf("Микрофон выключен", "Разговаривает", "Пользователь заглушен")
 ) {
 
     fun addPerson(person: Person) {
         users.add(person)
     }
 
-    fun statusRenew(person: Person, newStatus: String) {
-        person.statusChange(newStatus)
+    fun statusRenew(personNickName: String, newStatus: String) {
+        var user: Person
+        if (users.find { it.nickName == personNickName } != null) {
+            user = users.find { it.nickName == personNickName }!!
+            user.statusChange(newStatus)
+        }
     }
 }
 
@@ -26,7 +28,7 @@ class Person(
     var status: String = "Микрофон выключен",
 ) {
 
-    fun statusChange(newStatus: String){
+    fun statusChange(newStatus: String) {
         status = newStatus
     }
 }
@@ -53,6 +55,6 @@ fun main() {
     room.addPerson(person1)
     room.addPerson(person2)
 
-    room.statusRenew(person2, room.statusList[1])
+    room.statusRenew(person2.nickName, room.statusList[1])
 
 }
