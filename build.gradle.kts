@@ -11,6 +11,8 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    // Source: https://mvnrepository.com/artifact/com.auth0/java-jwt
+    implementation("com.auth0:java-jwt:4.5.1")
 }
 
 kotlin {
@@ -20,3 +22,4 @@ kotlin {
 tasks.test {
     useJUnitPlatform()
 }
+
