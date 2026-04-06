@@ -1,4 +1,4 @@
-package org.example.lesson_10
+package org.example.lessons1_10.lesson_10
 
 const val numbers = "0123456789"
 const val symbols = " !\"#$%&'()*+,-./"

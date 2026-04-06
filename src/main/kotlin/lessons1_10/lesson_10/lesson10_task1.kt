@@ -1,4 +1,4 @@
-package org.example.lesson_10
+package org.example.lessons1_10.lesson_10
 
 const val DICE_SIDES = 6
 const val PLAYER_1 = "Пользователь"
