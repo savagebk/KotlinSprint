@@ -5,7 +5,6 @@ class Room(
     val roomName: String,
     val cover: String,      //путь к файлу обложки
     val users: MutableList<Person> = mutableListOf(),
-    val statusList: List<String> = listOf("Микрофон выключен", "Разговаривает", "Пользователь заглушен")
 ) {
 
     fun addPerson(person: Person) {
@@ -13,11 +12,7 @@ class Room(
     }
 
     fun statusRenew(personNickName: String, newStatus: String) {
-        var user: Person
-        if (users.find { it.nickName == personNickName } != null) {
-            user = users.find { it.nickName == personNickName }!!
-            user.statusChange(newStatus)
-        }
+        users.find { it.nickName == personNickName }?.statusChange(newStatus)
     }
 }
 
@@ -25,7 +20,8 @@ class Person(
     val id: Int,
     val nickName: String,
     val avatar: String,      //путь к файлу аватара
-    var status: String = "Микрофон выключен",
+    val statusList: List<String> = listOf("Микрофон выключен", "Разговаривает", "Пользователь заглушен"),
+    var status: String = statusList[0],
 ) {
 
     fun statusChange(newStatus: String) {
@@ -55,6 +51,6 @@ fun main() {
     room.addPerson(person1)
     room.addPerson(person2)
 
-    room.statusRenew(person2.nickName, room.statusList[1])
+    room.statusRenew(person2.nickName, person2.statusList[1])
 
 }
