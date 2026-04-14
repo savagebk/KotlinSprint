@@ -1,4 +1,4 @@
-package org.example.lessons1_10.lesson_10
+/*package org.example.lessons1_10.lesson_10
 
 const val DICE_SIDES = 6
 const val PLAYER_1 = "Пользователь"
@@ -26,4 +26,4 @@ fun turn(name: String): Int {
 fun diceRoll(diceSides: Int): Int {
     val roll = (1 .. diceSides).random()
     return roll
-}
+}*/
