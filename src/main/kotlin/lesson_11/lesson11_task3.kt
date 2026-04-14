@@ -20,8 +20,7 @@ class Person(
     val id: Int,
     val nickName: String,
     val avatar: String,      //путь к файлу аватара
-    val statusList: List<String> = listOf("Микрофон выключен", "Разговаривает", "Пользователь заглушен"),
-    var status: String = statusList[0],
+    var status: String = "Микрофон выключен",
 ) {
 
     fun statusChange(newStatus: String) {
@@ -51,6 +50,6 @@ fun main() {
     room.addPerson(person1)
     room.addPerson(person2)
 
-    room.statusRenew(person2.nickName, person2.statusList[1])
+    room.statusRenew(person2.nickName, "Разговаривает")
 
 }
